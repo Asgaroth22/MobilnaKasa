@@ -3,10 +3,17 @@
     <string name="hello">Hello!</string>
     <string name="chooseOperator">Choose operator</string>
     <string name="prompt_email">Email</string>
+    <string name="home_cash_register">Cash register</string>
+    <string name="home_scan">Scan</string>
+    <string name="home_raports">Raports</string>
+    <string name="home_employees">Employees</string>
+    <string name="home_products">Produkty</string>
+    <string name="home_receipts">Receipts</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="action_sign_in_as">Sign in as</string>
+    <string name="action_logout">Log out</string>
     <string name="welcome">"Welcome !"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>

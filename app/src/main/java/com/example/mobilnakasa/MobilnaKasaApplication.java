@@ -2,7 +2,7 @@ package com.example.mobilnakasa;
 
 import android.app.Application;
 
-public class GlobalVariables extends Application {
+public class MobilnaKasaApplication extends Application {
 
     private OperatorItem loggedOperator;
 

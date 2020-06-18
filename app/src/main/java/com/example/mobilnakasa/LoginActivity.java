@@ -51,11 +51,11 @@ public class LoginActivity extends AppCompatActivity {
         OperatorItem operator = intent.getParcelableExtra("operator");
         //Sprawdzenie czy logowanie się udało
         if(resultCode == Server.RESPONSE_SUCCESS){
-            Toast.makeText(this, "Zalogowano",Toast.LENGTH_SHORT).show();
-            GlobalVariables globalVar = (GlobalVariables) getApplicationContext();
-            globalVar.setLoggedOperator(operator);
+            MobilnaKasaApplication app = (MobilnaKasaApplication) getApplicationContext();
+            app.setLoggedOperator(operator);
+            Toast.makeText(this, "Zalogowano jako " + app.getLoggedOperator().getName(), Toast.LENGTH_SHORT).show();
         } else {
-                Toast.makeText(this, "Niepoprawne hasło",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Niepowodzenie(nieznany operator lub hasło)",Toast.LENGTH_SHORT).show();
         }
 
         super.onActivityResult(requestCode, resultCode, data);

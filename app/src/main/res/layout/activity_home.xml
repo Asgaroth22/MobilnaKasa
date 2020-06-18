@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity"
+    android:background="@drawable/background_logo">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="@string/action_logout"
+        android:textColor="@android:color/white"
+        android:textSize="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/buttonHomeKasa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:srcCompat="@drawable/home_kasa" />
+
+    <ImageButton
+        android:id="@+id/buttonHomeScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
+        app:srcCompat="@drawable/home_skanowanie" />
+
+    <ImageButton
+        android:id="@+id/buttonHomeRaports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="70dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHomeKasa"
+        app:srcCompat="@drawable/home_raporty" />
+
+    <ImageButton
+        android:id="@+id/buttonHomeProducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="70dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHomeRaports"
+        app:srcCompat="@drawable/home_produkty" />
+
+    <ImageButton
+        android:id="@+id/buttonHomeEmployees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="50dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHomeScan"
+        app:srcCompat="@drawable/home_pracownicy" />
+
+    <ImageButton
+        android:id="@+id/buttonHomeReceipts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="50dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonHomeEmployees"
+        app:srcCompat="@drawable/home_paragony" />
+
+    <TextView
+        android:id="@+id/textHomeCashRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_square"
+        android:textAlignment="center"
+        android:minWidth="120dp"
+        android:paddingHorizontal="10dp"
+        android:text="@string/home_cash_register"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonHomeKasa"
+        app:layout_constraintEnd_toEndOf="@+id/buttonHomeKasa"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/buttonHomeKasa" />
+
+    <TextView
+        android:id="@+id/textHomeScan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_square"
+        android:text="@string/home_scan"
+        android:textAlignment="center"
+        android:paddingHorizontal="10dp"
+        android:minWidth="120dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonHomeScan"
+        app:layout_constraintEnd_toEndOf="@+id/buttonHomeScan"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/buttonHomeScan" />
+
+    <TextView
+        android:id="@+id/textHomeRaports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_square"
+        android:text="@string/home_raports"
+        android:textAlignment="center"
+        android:paddingHorizontal="10dp"
+        android:minWidth="120dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonHomeRaports"
+        app:layout_constraintEnd_toEndOf="@+id/buttonHomeRaports"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/buttonHomeRaports" />
+
+    <TextView
+        android:id="@+id/textHomeEmployees"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_square"
+        android:text="@string/home_employees"
+        android:textAlignment="center"
+        android:paddingHorizontal="10dp"
+        android:minWidth="120dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonHomeEmployees"
+        app:layout_constraintEnd_toEndOf="@+id/buttonHomeEmployees"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/buttonHomeEmployees" />
+
+    <TextView
+        android:id="@+id/textHomeProducts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        android:textAlignment="center"
+        android:minWidth="120dp"
+        android:background="@drawable/round_square"
+        android:text="@string/home_products"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonHomeProducts"
+        app:layout_constraintEnd_toEndOf="@+id/buttonHomeProducts"
+        app:layout_constraintStart_toStartOf="@+id/buttonHomeProducts" />
+
+    <TextView
+        android:id="@+id/textHomeReceipts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_square"
+        android:text="@string/home_receipts"
+        android:textAlignment="center"
+        android:paddingHorizontal="10dp"
+        android:minWidth="120dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonHomeReceipts"
+        app:layout_constraintEnd_toEndOf="@+id/buttonHomeReceipts"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="@+id/buttonHomeReceipts" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
