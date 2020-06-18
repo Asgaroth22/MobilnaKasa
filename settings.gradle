@@ -1,0 +1,2 @@
+rootProject.name='MobilnaKasa'
+include ':app'
