@@ -29,14 +29,11 @@ public class ChooseOperatorActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         //przycisk "Home"
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.baseline_home_black_18dp);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        //wypełnianie listy operatorów
-        // TODO pobranie listy z serwera
-
+        //zapytanie o listę operatorów do serwera
         Intent intencja = new Intent(getApplicationContext(), Server.class);
         PendingIntent pendingResult = createPendingResult(1, new Intent(),0);
         intencja.putExtra(Server.ACTION,Server.ACTION_USER_LIST);
@@ -51,17 +48,18 @@ public class ChooseOperatorActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Toast.makeText(this, String.valueOf(resultCode),Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, String.valueOf(requestCode),Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, String.valueOf(data.getStringExtra(Server.RESPONSE)), Toast.LENGTH_SHORT).show();
+        //.makeText(this, String.valueOf(resultCode),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, String.valueOf(requestCode),Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, String.valueOf(data.getStringExtra(Server.RESPONSE)), Toast.LENGTH_SHORT).show();
 
 
         ArrayList<OperatorItem> operatorList = new ArrayList<>();
         try {
-            JSONArray operatorArray = new JSONArray(data.getStringExtra(Server.RESPONSE));
+            JSONObject obj = new JSONObject(data.getStringExtra(Server.RESPONSE));
+            JSONArray operatorArray = obj.getJSONArray("users");
             for(int i=0; i<operatorArray.length(); i++){
                 JSONObject operatorDetail = operatorArray.getJSONObject(i);
-                operatorList.add(new OperatorItem(R.drawable.ic_android_black_24dp,operatorDetail.getString("imie")+" "+operatorDetail.getString("nazwisko"),operatorDetail.getString("stanowisko")));
+                operatorList.add(new OperatorItem(operatorDetail.getString("_id"), R.drawable.ic_android_black_24dp,operatorDetail.getString("imie")+" "+operatorDetail.getString("nazwisko"),operatorDetail.getString("stanowisko")));
             }
         } catch (JSONException e) {
             e.printStackTrace();
@@ -71,6 +69,8 @@ public class ChooseOperatorActivity extends AppCompatActivity {
     }
 
     public void buildRecyclerView(final ArrayList<OperatorItem> operatorList){
+
+        //wypełnianie listy operatorów
         opRecyclerView = findViewById(R.id.operatorRecyclerView);
         opRecyclerView.setHasFixedSize(true);
         opLayoutManager = new LinearLayoutManager(this);
@@ -80,8 +80,9 @@ public class ChooseOperatorActivity extends AppCompatActivity {
         opAdapter.setOnItemClickListener(new OperatorAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position){
-                operatorList.get(position).test("test");
-                opAdapter.notifyItemChanged(position);
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                intent.putExtra("operator", operatorList.get(position));
+                startActivity(intent);
             }
         });
     }

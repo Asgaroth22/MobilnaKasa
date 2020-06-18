@@ -42,6 +42,8 @@ public class Server extends IntentService {
     public static final String PARAMS_RECIEPT = "Reciept";
     public static final String PRODUCT_CODE = "product";
     public static final String RECIEPT_CODE = "reciept";
+    public static final int RESPONSE_SUCCESS = 200;
+    public static final int RESPONSE_ERROR = 203;
 
     public Server() {
         super("HTTP calls handler");
@@ -93,7 +95,7 @@ public class Server extends IntentService {
                 myConnection.setDoOutput(true);
                 JSONArray jsonArray = new JSONArray(paramsReceipt);
                 JSONObject cred = new JSONObject();
-                cred.put("produkty",jsonArray);
+                cred.put("produkty", jsonArray);
                 DataOutputStream localDataOutputStream = new DataOutputStream(myConnection.getOutputStream());
                 localDataOutputStream.writeBytes(cred.toString());
                 localDataOutputStream.flush();
@@ -104,7 +106,7 @@ public class Server extends IntentService {
             String response = "";
             int responseCode = myConnection.getResponseCode();
             Log.i("ABCD", String.valueOf(responseCode));
-            if (responseCode == 200) {
+            if (responseCode == RESPONSE_SUCCESS) {
                 InputStreamReader responseBody = new InputStreamReader(myConnection.getInputStream());
                 BufferedReader bufferedReader = new BufferedReader(responseBody);
                 String line;
@@ -112,7 +114,7 @@ public class Server extends IntentService {
                     response += line;
                 }
                 bufferedReader.close();
-            }else if(responseCode == 209){
+            }else if(responseCode == RESPONSE_ERROR){
                 InputStreamReader responseBody = new InputStreamReader(myConnection.getInputStream());
                 BufferedReader bufferedReader = new BufferedReader(responseBody);
                 String line;
