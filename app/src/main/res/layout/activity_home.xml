@@ -39,6 +39,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
         android:background="@android:color/transparent"
+        android:onClick="click"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         app:srcCompat="@drawable/home_kasa" />
@@ -50,6 +51,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="50dp"
         android:background="@android:color/transparent"
+        android:onClick="click"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
         app:srcCompat="@drawable/home_skanowanie" />
@@ -61,6 +63,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="70dp"
         android:background="@android:color/transparent"
+        android:onClick="click"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonHomeKasa"
         app:srcCompat="@drawable/home_raporty" />
@@ -72,6 +75,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="70dp"
         android:background="@android:color/transparent"
+        android:onClick="click"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonHomeRaports"
         app:srcCompat="@drawable/home_produkty" />
@@ -83,6 +87,7 @@
         android:layout_marginTop="70dp"
         android:layout_marginEnd="50dp"
         android:background="@android:color/transparent"
+        android:onClick="click"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonHomeScan"
         app:srcCompat="@drawable/home_pracownicy" />
@@ -94,6 +99,7 @@
         android:layout_marginTop="70dp"
         android:layout_marginEnd="50dp"
         android:background="@android:color/transparent"
+        android:onClick="click"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonHomeEmployees"
         app:srcCompat="@drawable/home_paragony" />

@@ -26,6 +26,35 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
     }
 
+    public void click(View view){
+
+        //obsługa przycisków
+        int id = view.getId();
+        if(id == R.id.buttonHomeKasa){
+            Toast.makeText(this, "przycisk1", Toast.LENGTH_SHORT).show();
+        }
+        else if (id == R.id.buttonHomeScan){
+            Toast.makeText(this, "przycisk2", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (id == R.id.buttonHomeRaports){
+            Toast.makeText(this, "przycisk3", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (id == R.id.buttonHomeEmployees){
+            Toast.makeText(this, "przycisk4", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (id == R.id.buttonHomeProducts){
+            Toast.makeText(this, "przycisk5", Toast.LENGTH_SHORT).show();
+
+        }
+        else if (id == R.id.buttonHomeReceipts){
+            Toast.makeText(this, "przycisk6", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
     public void logout(View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.action_logout);
