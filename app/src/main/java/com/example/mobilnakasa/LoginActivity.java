@@ -54,6 +54,9 @@ public class LoginActivity extends AppCompatActivity {
             MobilnaKasaApplication app = (MobilnaKasaApplication) getApplicationContext();
             app.setLoggedOperator(operator);
             Toast.makeText(this, "Zalogowano jako " + app.getLoggedOperator().getName(), Toast.LENGTH_SHORT).show();
+            Intent homeIntent = new Intent(getApplicationContext(), HomeActivity.class);
+            homeIntent.putExtra("operator", operator);
+            startActivity(homeIntent);
         } else {
                 Toast.makeText(this, "Niepowodzenie(nieznany operator lub hasło)",Toast.LENGTH_SHORT).show();
         }

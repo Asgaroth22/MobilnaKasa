@@ -28,7 +28,7 @@ public class Server extends IntentService {
     public static final String ACTION = "ACTION";
     public static final String ACTION_USER_LIST = "user/all";
     public static final String ACTION_USER_LOGIN = "user/login";
-    public static final String ACTION_USER_LOGOOUT = "user/logout";
+    public static final String ACTION_USER_LOGOUT = "user/logout";
     public static final String ACTION_USER_REGISTER = "user/register";
     public static final String ACTION_PRODUCT_ADD = "product/add";
     public static final String ACTION_PRODUCT_EDIT = "product/edit";

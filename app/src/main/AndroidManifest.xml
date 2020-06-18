@@ -17,8 +17,7 @@
         <activity android:name=".HomeActivity"></activity>
         <activity
             android:name=".LoginActivity"
-            android:label="@string/action_sign_in_short"
-            android:parentActivityName=".ChooseOperatorActivity" />
+            android:label="@string/action_sign_in_short" />
 
         <service
             android:name=".Server"
@@ -26,8 +25,7 @@
             android:exported="true" />
 
         <activity
-            android:name=".ChooseOperatorActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".ChooseOperatorActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
