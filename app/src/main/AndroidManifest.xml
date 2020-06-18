@@ -14,11 +14,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".ProductListActivity"
+            android:label="@string/home_products"
+            android:parentActivityName=".HomeActivity"></activity>
+        <activity android:name=".CashRegisterActivity"
+            android:label="@string/home_cash_register"
+            android:parentActivityName=".HomeActivity"/>
+        <activity android:name=".HomeActivity" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/action_sign_in_short"
-            android:parentActivityName=".ChooseOperatorActivity"/>
+            android:parentActivityName=".ChooseOperatorActivity" />
 
         <service
             android:name=".Server"
@@ -27,7 +33,7 @@
 
         <activity
             android:name=".ChooseOperatorActivity"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

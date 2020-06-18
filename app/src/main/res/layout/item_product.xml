@@ -18,16 +18,8 @@
         android:background="@drawable/operator_card"
         >
 
-        <ImageView
-            android:id="@+id/operatorImage"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="2dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
-            android:id="@+id/operatorName"
+            android:id="@+id/productName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
@@ -35,18 +27,32 @@
             android:textColor="@android:color/black"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toEndOf="@+id/operatorImage"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/operatorRole"
+            android:id="@+id/productPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="Price"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/productName"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/productCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="4dp"
-            android:text="Role"
-            app:layout_constraintStart_toEndOf="@+id/operatorImage"
-            app:layout_constraintTop_toBottomOf="@+id/operatorName" />
+            android:layout_marginTop="5dp"
+            android:padding="2dp"
+            android:text="Code"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/productName" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

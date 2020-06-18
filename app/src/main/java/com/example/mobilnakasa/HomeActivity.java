@@ -46,7 +46,8 @@ public class HomeActivity extends AppCompatActivity {
 
         }
         else if (id == R.id.buttonHomeProducts){
-            Toast.makeText(this, "przycisk5", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ProductListActivity.class);
+            startActivity(intent);
 
         }
         else if (id == R.id.buttonHomeReceipts){
