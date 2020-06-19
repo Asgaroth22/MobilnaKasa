@@ -31,4 +31,5 @@
     <string name="price">CENA</string>
     <string name="action_transaction_exit">Odrzuć transakcję</string>
     <string name="action_transaction_finish">Zakończ transakcję i generuj paragon</string>
+    <string name="action_add">Dodaj</string>
 </resources>

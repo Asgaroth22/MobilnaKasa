@@ -42,5 +42,6 @@
     <string name="exit">EXIT</string>
     <string name="action_transaction_exit">Discard transaction</string>
     <string name="action_transaction_finish">Finish transaction and create receipt</string>
+    <string name="action_add">Add</string>
 
 </resources>
