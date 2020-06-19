@@ -5,7 +5,7 @@
     <string name="chooseOperator">Wybierz operatora</string>
     <string name="prompt_email">Email</string>
     <string name="home_cash_register">Kasa fiskalna</string>
-    <string name="home_scan">Skanuj</string>
+    <string name="home_scan">Skan</string>
     <string name="home_raports">Raporty</string>
     <string name="home_employees">Pracownicy</string>
     <string name="home_products">Produkty</string>
@@ -25,4 +25,10 @@
     <string name="action_exit">Wyjdź</string>
     <string name="new_product">Nowy produkt</string>
     <string name="cash_register_sum">Razem:</string>
+    <string name="action_revert">Cofnij</string>
+    <string name="code">KOD</string>
+    <string name="exit">WYJDZ</string>
+    <string name="price">CENA</string>
+    <string name="action_transaction_exit">Odrzuć transakcję</string>
+    <string name="action_transaction_finish">Zakończ transakcję i generuj paragon</string>
 </resources>
