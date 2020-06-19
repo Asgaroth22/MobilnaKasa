@@ -69,7 +69,6 @@ public class ChooseOperatorActivity extends AppCompatActivity {
     }
 
     public void buildRecyclerView(final ArrayList<OperatorItem> operatorList){
-
         //wypełnianie listy operatorów
         opRecyclerView = findViewById(R.id.operatorRecyclerView);
         opRecyclerView.setHasFixedSize(true);

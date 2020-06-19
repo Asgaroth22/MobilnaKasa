@@ -42,11 +42,6 @@ public class ProductListActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Toast.makeText(this, String.valueOf(resultCode),Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, String.valueOf(requestCode),Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, String.valueOf(data.getStringExtra(Server.RESPONSE)), Toast.LENGTH_SHORT).show();
-
-
         ArrayList<ProductItem> productList = new ArrayList<>();
         try {
             JSONObject obj = new JSONObject(data.getStringExtra(Server.RESPONSE));
@@ -64,7 +59,7 @@ public class ProductListActivity extends AppCompatActivity {
 
     public void buildRecyclerView(final ArrayList<ProductItem> productList){
 
-        //wypełnianie listy operatorów
+        //wypełnianie listy produktów
         mRecyclerView = findViewById(R.id.productListRecyclerView);
         mRecyclerView.setHasFixedSize(true);
         mLayoutManager = new LinearLayoutManager(this);
@@ -74,6 +69,16 @@ public class ProductListActivity extends AppCompatActivity {
         mAdapter.setOnItemClickListener(new ProductAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position){
+            }
+
+            @Override
+            public void onDeleteClick(int position) {
+                //TODO usuwanie produktów
+            }
+            @Override
+            public void onEditClick(int position) {
+                //TODO edycja produktów
+
             }
         });
     }

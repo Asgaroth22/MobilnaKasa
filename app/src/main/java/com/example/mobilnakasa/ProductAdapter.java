@@ -3,6 +3,7 @@ package com.example.mobilnakasa;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,7 +16,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     public interface OnItemClickListener {
         void onItemClick(int position);
+        void onDeleteClick(int position);
+        void onEditClick(int position);
     }
+
 
     public void setOnItemClickListener(ProductAdapter.OnItemClickListener listener){
         mListener = listener;
@@ -25,12 +29,17 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         public TextView name;
         public TextView code;
         public TextView price;
+        public ImageView productDelete;
+        public ImageView productEdit;
 
         public ProductViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
             name = itemView.findViewById(R.id.productName);
             code = itemView.findViewById(R.id.productCode);
             price = itemView.findViewById(R.id.productPrice);
+            productDelete = itemView.findViewById(R.id.buttonProductDelete);
+            productEdit = itemView.findViewById(R.id.buttonProductEdit);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -38,7 +47,31 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                     if(listener != null) {
                         int position = getAdapterPosition();
                         if(position != RecyclerView.NO_POSITION){
+                            listener.onDeleteClick(position);
+                        }
+                    }
+                }
+            });
+
+            productDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view){
+                    if(listener != null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
                             listener.onItemClick(position);
+                        }
+                    }
+                }
+            });
+
+            productEdit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view){
+                    if(listener != null) {
+                        int position = getAdapterPosition();
+                        if(position != RecyclerView.NO_POSITION){
+                            listener.onEditClick(position);
                         }
                     }
                 }

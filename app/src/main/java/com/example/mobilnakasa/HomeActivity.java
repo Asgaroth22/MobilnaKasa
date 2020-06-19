@@ -31,7 +31,8 @@ public class HomeActivity extends AppCompatActivity {
         //obsługa przycisków
         int id = view.getId();
         if(id == R.id.buttonHomeKasa){
-            Toast.makeText(this, "przycisk1", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, CashRegisterActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.buttonHomeScan){
             Toast.makeText(this, "przycisk2", Toast.LENGTH_SHORT).show();
